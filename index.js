@@ -4,6 +4,12 @@ const path = require('path');
 
 const app = express();
 
+// enable body parser
+
+app.use(express.json());
+app.use(express.urlencoded({
+  extended: false
+}))
 dotenv.config({ path: ".env" });
 const PORT = process.env.PORT || 8000;
 
